@@ -1,0 +1,26 @@
+<h1>Employee Details</h1>
+
+<div th:switch="${emp}">
+	<h3 th:case="null">Data Not Found!</h3>
+	<div th:case="*">
+		<table>
+			<thead>
+				<tr>
+					<td><b>ID</b></td>
+					<td><b>Name</b></td>
+					<td><b>Mail</b></td>
+					<td><b>Joining Date</b></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td th:text="${emp.empId}"></td>
+					<td th:text="${emp.empName}"></td>
+					<td th:text="${emp.empMailId}"></td>
+					<td th:text="${emp.empJoiningDate}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<a th:href="@{/home/list}">Back</a>
+	</div>
+</div>

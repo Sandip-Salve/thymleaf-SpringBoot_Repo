@@ -1,0 +1,22 @@
+<div class="container" style="border-color: black; border-style: solid;">
+	<form action="#" th:action=@{/employee/update/{id}(id=${emp.empId})} th:object=${emp}
+		method="post">
+		<div style="display: inline;">
+			<label for="empName">Name: </label> <input type="text"
+				th:field="*{empName}" id="empName" placeholder="Employee Name"
+				style="margin-top: 10px;"> <span
+				th:if="${#fields.hasErrors('empName')}" th:errors="*{empName}"></span>
+			<br> <label for="empMailId">Email: </label> <input type="email"
+				th:field="*{empMailId}" id="empMailId" placeholder="Mail-ID"
+				style="margin-top: 10px;"> <span
+				th:if="${#fields.hasErrors('empMailId')}" th:errors="*{empMailId}"></span>
+			<br> <label for="empJoiningDate">Joining Date: </label> <input
+				type="date" th:field="*{empJoiningDate}" id="empJoiningDate"
+				name="empJoiningDate" style="margin-top: 10px;"> <span
+				th:if="${#fields.hasErrors('empJoiningDate')}"
+				th:errors="*{empJoiningDate}"></span> <br> <input type="submit"
+				value="Add Employee" style="margin-top: 10px;">
+		</div>
+
+	</form>
+</div>

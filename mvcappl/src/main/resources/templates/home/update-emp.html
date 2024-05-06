@@ -1,0 +1,26 @@
+<h1>UPdate Employee</h1>
+
+<div>
+	<form action="#" th:action="@{/home/updateEmp/{id}(id=${emp.empId})}" th:object="${emp}" method="post">
+		<div>
+			<label for="empId">ID: </label>
+			<input type="number" th:field="*{empId}" id="empId" placeholder="Emplyee ID" readonly="readonly">
+			<span th:if="${#fields.hasErrors('empId')}" th:errors="*{empId}"></span>
+			<br>
+			<label for="empName">Employee Name: </label>
+			<input type="text" th:field="*{empName}" id="empName" placeholder="Employee Name">
+			<span th:if="${#fields.hasErrors('empName')}" th:errors="*{empName}"></span>
+			<br>
+			<label for="empMailId">Employee Name: </label>
+			<input type="text" th:field="*{empMailId}" id="empMailId" placeholder="Employee Mail">
+			<span th:if="${#fields.hasErrors('empMailId')}" th:errors="*{empMailId}"></span>
+			<br>
+			<label for="empJoiningDate">Employee Name: </label>
+			<input type="date" th:field="*{empJoiningDate}" id="empJoiningDate" placeholder="Employee Joining Date">
+			<span th:if="${#fields.hasErrors('empJoiningDate')}" th:errors="*{empJoiningDate}"></span>
+			<br>
+			<input type="submit" value="Update Employee">
+			<a th:href="@{/home/list}">Cancel</a>
+		</div>
+	</form>
+</div>

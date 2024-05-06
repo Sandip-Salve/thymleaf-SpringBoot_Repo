@@ -1,0 +1,28 @@
+<h1>Employee List</h1>
+
+<p><a href="/home/signup">Add a Employee</a> </p>
+<div th:switch="${emps}">
+	<h3 th:case="null">Data Not Found!</h3>
+	<div th:case="*">
+		<table>
+			<thead>
+				<tr>
+					<td><b>Name</b></td>
+					<td><b>Mail</b></td>
+					<td><b>Joining Date</b></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="emp : ${emps}">
+					<td th:text="${emp.empName}"></td>
+					<td th:text="${emp.empMailId}"></td>
+					<td th:text="${emp.empJoiningDate}"></td>
+					<td><a th:href="@{/home/edit/{id}(id=${emp.empId})}">Edit </a></td>
+					<td><a th:href="@{/home/update/{id}(id=${emp.empId})}">Update</a></td>
+					<td><a th:href="@{/home/delete/{id}(id=${emp.empId})}">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+</div>

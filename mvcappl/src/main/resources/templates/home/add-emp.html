@@ -1,0 +1,23 @@
+<h1>Employee Mgt</h1>
+
+<div>
+	<form action="#" th:action="@{/home/add}" th:object=${requestModel} method="post">
+		<div>
+			<label for="empName">Employee Name: </label>
+			<input type="text" th:field="*{empName}" id="empName" placeHolder="Employee Name">
+			<span th:if="${#fields.hasErrors('empName')}" th:errors="*{empName}"></span>
+			
+			<label for="empMailId">Employee Mail</label>
+			<input type="text" th:field="*{empMailId}" id="empMailId" placeHolder="Employee Mail">
+			<span th:if="${#fields.hasErrors('empMailId')}" th:errors="*{empMailId}"></span>
+			
+			<label for="empJoiningDate">Joining Date: </label>
+			<input type="date" th:field="*{empJoiningDate}" id="empJoiningDate">
+			<span th:if="${#fields.hasErrors('empJoiningDate')}" th:errors="*{empJoiningDate}"></span>
+			
+			<input type="submit" value="Add Employee">
+			<p><a href="/home/list">Cancel</a> </p>
+		</div>
+	
+	</form>
+</div>

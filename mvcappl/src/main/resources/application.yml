@@ -1,0 +1,17 @@
+server:
+    port: 8090
+    
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/userappl?createDatabaseIfNotExist=true
+        username: root
+        password: manager
+    jpa:
+      hibernate:
+          ddl-auto: none
+      open-in-view: false
+    jackson:
+        date-format: yyyy-MM-dd
+      
+        
+    
